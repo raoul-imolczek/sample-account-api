@@ -41,7 +41,7 @@ public class AccountApiController implements AccountApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<List<Operation>>(objectMapper.readValue("[ {  \"date\" : \"2000-01-23T04:56:07.000+00:00\",  \"amount\" : 6,  \"id\" : 0,  \"label\" : \"label\"}, {  \"date\" : \"2000-01-23T04:56:07.000+00:00\",  \"amount\" : 6,  \"id\" : 0,  \"label\" : \"label\"} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<List<Operation>>(objectMapper.readValue("[ {  \"date\" : \"2000-01-23T04:56:07.000+00:00\",  \"amount\" : 6,  \"id\" : 0,  \"label\" : \"label\"}, {  \"date\" : \"2000-01-23T04:56:07.000+00:00\",  \"amount\" : 6,  \"id\" : 0,  \"label\" : \"label\"} ]", List.class), HttpStatus.OK);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<List<Operation>>(HttpStatus.INTERNAL_SERVER_ERROR);
